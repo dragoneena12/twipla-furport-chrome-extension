@@ -26,4 +26,4 @@ tmp[3]
   : (date = new Date(tmp[0], tmp[1] - 1, tmp[2]));
 params.append("start_datetime", date.toISOString());
 params.append("end_datetime", date.toISOString());
-window.open("https://stg.furport.tk/events/new?" + params.toString(), "_blank");
+window.open("https://www.furport.tk/events/new?" + params.toString(), "_blank");
