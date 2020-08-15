@@ -26,4 +26,12 @@ tmp[3]
   : (date = new Date(tmp[0], tmp[1] - 1, tmp[2]));
 params.append("start_datetime", date.toISOString());
 params.append("end_datetime", date.toISOString());
+tmp = document
+  .querySelector(
+    "#container > tbody > tr > td.left_col.pad20 > div:nth-child(23)"
+  )
+  .innerText.split(/\r\n|\r|\n/)[0]
+  .match(/\d+/g)[0];
+params.append("attendees", +tmp);
+params.append("url", location.href);
 window.open("https://www.furport.tk/events/new?" + params.toString(), "_blank");
