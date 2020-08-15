@@ -27,11 +27,9 @@ tmp[3]
 params.append("start_datetime", date.toISOString());
 params.append("end_datetime", date.toISOString());
 tmp = document
-  .querySelector(
-    "#container > tbody > tr > td.left_col.pad20 > div:nth-child(23)"
-  )
-  .innerText.split(/\r\n|\r|\n/)[0]
-  .match(/\d+/g)[0];
+  .querySelector("#container > tbody > tr > td.left_col.pad20")
+  .innerText.match(/参加者 \(\d+/g)[0]
+  .match(/\d+/g);
 params.append("attendees", +tmp);
 params.append("url", location.href);
 window.open("https://www.furport.tk/events/new?" + params.toString(), "_blank");
